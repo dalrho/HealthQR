@@ -21,7 +21,9 @@ class MedicalRecord(Base):
     __tablename__ = "medical_records"
 
     patient_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), primary_key=True)
-    blood_type = Column(String(5))
+    blood_type = Column(String(5)) # Added
+    emergency_contact_name = Column(String) # Added
+    emergency_contact_phone = Column(String) # Added
     allergies = Column(Text)
     medical_history = Column(Text)
     updated_at = Column(TIMESTAMP, server_default=text("now()"), onupdate=text("now()"))

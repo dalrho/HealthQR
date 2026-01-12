@@ -7,7 +7,11 @@ class UserBase(BaseModel):
     age: int
 
 class UserCreate(UserBase):
-    pass
+    blood_type: str
+    emergency_contact_name: str
+    emergency_contact_phone: str
+    allergies: str
+    medical_history: str
 
 class UserResponse(BaseModel):
     id: UUID

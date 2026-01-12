@@ -48,20 +48,45 @@ def register_patient(user: schemas.UserCreate, db: Session = Depends(get_db)):
     )
     
     db.add(new_user)
+    db.flush() # This gives us new_user.id
+
+    # 2. Create Medical Record linked to that User
+    new_record = models.MedicalRecord(
+        patient_id=new_user.id,
+        blood_type=user.blood_type,
+        emergency_contact_name=user.emergency_contact_name,
+        emergency_contact_phone=user.emergency_contact_phone,
+        allergies=user.allergies,
+        medical_history=user.medical_history
+    )
+    db.add(new_record)
+    
     db.commit()
     db.refresh(new_user)
-    
-    return new_user 
+    return new_user
 
-@app.get("/scan/{token}", response_model=schemas.UserBase)
+@app.get("/scan/{token}")
 def scan_qr_code(token: str, db: Session = Depends(get_db)):
-    # Find user by the QR token
+    # 1. Find the user
     user = db.query(models.User).filter(models.User.qr_token == token).first()
     
     if not user:
         raise HTTPException(status_code=404, detail="Invalid QR Code")
-        
-    return user
+    
+    # 2. Access the linked medical record
+    # SQLAlchemy handles the 'join' automatically via the relationship we defined
+    record = user.medical_record
+    
+    # 3. Combine the data into one response for the frontend
+    return {
+        "full_name": user.full_name,
+        "age": user.age,
+        "blood_type": record.blood_type if record else "Unknown",
+        "emergency_contact_name": record.emergency_contact_name if record else "N/A",
+        "emergency_contact_phone": record.emergency_contact_phone if record else "N/A",
+        "allergies": record.allergies if record else "None",
+        "medical_history": record.medical_history if record else "None"
+    }
 
 @app.get("/scan/{token}")
 def get_user_by_token(token: str, db: Session = Depends(get_db)):
