@@ -15,15 +15,6 @@ HealthQR is a secure, decentralized digital health platform designed to provide 
 - **Secure Medic Scanner**  
   A protected portal for authorized medical personnel with real-time QR decoding.
 
-- **JWT Security**  
-  Role-Based Access Control (RBAC) ensuring only verified medics can access sensitive health records.
-
-- **Session Protection**  
-  Automatic session clearing and route guarding to prevent unauthorized data exposure.
-
-- **Audit-Ready Architecture**  
-  Backend designed with logging and emergency override capabilities.
-
 ---
 
 ## 🛠 Tech Stack
