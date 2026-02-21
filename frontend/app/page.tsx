@@ -9,14 +9,14 @@ export default function LandingPage() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">
-        {/* Redirects to app/register/page.tsx */}
+        {}
         <Link href="/register" className="bg-white text-blue-600 p-10 rounded-[2.5rem] shadow-2xl hover:scale-105 transition-all group flex flex-col items-center">
           <span className="text-5xl block mb-4 group-hover:animate-bounce">📋</span>
           <span className="text-2xl font-black uppercase block">Citizen</span>
           <span className="text-sm opacity-70">Register & Get QR</span>
         </Link>
         
-        {/* Redirects to app/login/page.tsx */}
+        {}
         <Link href="/login" className="bg-blue-800 text-white p-10 rounded-[2.5rem] shadow-2xl border-4 border-blue-400 hover:scale-105 transition-all group flex flex-col items-center">
           <span className="text-5xl block mb-4 group-hover:rotate-12 transition-transform">🏥</span>
           <span className="text-2xl font-black uppercase block">Medic</span>

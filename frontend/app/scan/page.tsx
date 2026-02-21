@@ -8,7 +8,6 @@ export default function ScanPage() {
   const [isScanning, setIsScanning] = useState(true);
   const router = useRouter();
 
-  // 1. SECURE ROUTE GUARD (The Bouncer)
   useEffect(() => {
     const token = sessionStorage.getItem('token');
     if (!token) {
@@ -29,14 +28,11 @@ export default function ScanPage() {
     verify();
   }, [router]);
 
-  // 2. SCANNER LOGIC (The Camera)
   useEffect(() => {
-    // Only start camera if we are in scanning mode
     if (!isScanning) return;
 
     let scanner: any;
 
-    // We use a small timeout to ensure the DOM element #reader exists
     const timer = setTimeout(async () => {
       const { Html5QrcodeScanner } = await import("html5-qrcode");
       
@@ -48,7 +44,6 @@ export default function ScanPage() {
 
       scanner.render(
         async (decodedText: string) => {
-          // Success! Stop camera and fetch data
           try {
             await scanner.clear(); 
             onScanSuccess(decodedText);
@@ -56,7 +51,7 @@ export default function ScanPage() {
             console.error("Scanner clear failed", e);
           }
         },
-        () => {} // Ignore frame errors
+        () => {} 
       );
     }, 300);
 

@@ -19,7 +19,6 @@ export default function LoginPage() {
 
       const res = await axios.post('http://localhost:8000/medic/login', formData);
       
-      // SWITCHED: Use sessionStorage instead of localStorage
       sessionStorage.setItem('token', res.data.access_token);
       
       router.push('/scan');

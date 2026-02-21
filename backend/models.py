@@ -21,9 +21,9 @@ class MedicalRecord(Base):
     __tablename__ = "medical_records"
 
     patient_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), primary_key=True)
-    blood_type = Column(String(5)) # Added
-    emergency_contact_name = Column(String) # Added
-    emergency_contact_phone = Column(String) # Added
+    blood_type = Column(String(5)) 
+    emergency_contact_name = Column(String) 
+    emergency_contact_phone = Column(String) 
     allergies = Column(Text)
     medical_history = Column(Text)
     updated_at = Column(TIMESTAMP, server_default=text("now()"), onupdate=text("now()"))
@@ -42,5 +42,5 @@ class AuditLog(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     actor_id = Column(UUID(as_uuid=True), ForeignKey("users.id"))
     target_id = Column(UUID(as_uuid=True), ForeignKey("users.id"))
-    action = Column(String) # e.g., "VIEW_RECORD"
+    action = Column(String) 
     timestamp = Column(TIMESTAMP, server_default=text("now()"))

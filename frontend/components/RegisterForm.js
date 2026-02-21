@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from 'react'; // 1. Added useRef
+import { useState, useRef } from 'react'; 
 import axios from 'axios';
 import { QRCodeCanvas } from 'qrcode.react';
 
@@ -11,23 +11,18 @@ export default function RegisterForm() {
   });
   const [qrToken, setQrToken] = useState(null);
 
-  // 2. Create the "tether" to grab the QR Canvas later
   const qrRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // 3. The logic to convert pixels to a file
   const downloadQR = () => {
-    // Find the <canvas> element inside our qrRef div
     const canvas = qrRef.current.querySelector("canvas");
     if (!canvas) return;
 
-    // Convert the canvas to a Base64 image string
     const image = canvas.toDataURL("image/png");
     
-    // Create a temporary link and "click" it to trigger the download
     const link = document.createElement("a");
     link.href = image;
     link.download = `HealthQR-${formData.full_name}.png`;
@@ -82,13 +77,13 @@ export default function RegisterForm() {
         <div className="text-center p-6">
           <h2 className="text-2xl font-bold text-green-600 mb-6">Registration Successful!</h2>
           
-          {/* 4. We wrap the QR in a div and give it the 'ref' */}
+          {}
           <div ref={qrRef} className="bg-white p-6 inline-block rounded-xl shadow-2xl border-4 border-blue-50">
             <QRCodeCanvas value={qrToken} size={256} />
           </div>
 
           <div className="mt-8 flex flex-col gap-3">
-            {/* 5. The new Download Button */}
+            {}
             <button 
               onClick={downloadQR}
               className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-md flex items-center justify-center gap-2"
