@@ -1,6 +1,14 @@
 # HealthQR: City-Wide Emergency Medical Response System
 
-HealthQR is a secure, decentralized digital health platform designed to provide emergency responders with instant access to life-saving medical data. By bridging the gap between citizens and medics through encrypted QR technology, HealthQR aims to reduce response times and improve patient outcomes in critical situations.
+In critical "golden hour" emergencies, seconds save lives. **HealthQR** addresses the dangerous data gap between unconscious patients and first responders.
+
+While currently a side-project, its real-world potential is immense:
+
+- **Universal Accessibility**: Instant access to allergies and blood types without needing a centralized hospital database login.
+
+- **Interoperability**: A low-cost bridge that works across different healthcare providers.
+
+- **Scalability**: A lightweight framework that could be deployed city-wide for rapid medic-to-patient data retrieval.  
 
 ---
 
