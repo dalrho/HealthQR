@@ -1,4 +1,4 @@
-# HealthQR: City-Wide Emergency Medical Response System
+# HealthQR: Emergency Medical Response System
 
 In critical "golden hour" emergencies, seconds save lives. **HealthQR** addresses the dangerous data gap between unconscious patients and first responders.
 
