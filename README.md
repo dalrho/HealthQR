@@ -84,8 +84,6 @@ docker exec -it healthqr_backend python seed_medic.py
 
 - **Password: naga123**
 
-⚠️ Important: Change these credentials immediately in production.
-
 ---
 
 ## 🖥 Usage Guide
