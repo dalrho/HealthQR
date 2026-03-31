@@ -12,7 +12,7 @@ While currently a side-project, its real-world potential is immense:
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
 - **Citizen Portal**  
   Simple registration for residents to input vitals, allergies, and emergency contacts.
@@ -25,7 +25,7 @@ While currently a side-project, its real-world potential is immense:
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Frontend:** Next.js (React), Tailwind CSS, `html5-qrcode`  
 - **Backend:** FastAPI (Python), SQLAlchemy  
@@ -34,7 +34,7 @@ While currently a side-project, its real-world potential is immense:
 
 ---
 
-## 📦 Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 
@@ -86,7 +86,7 @@ docker exec -it healthqr_backend python seed_medic.py
 
 ---
 
-## 🖥 Usage Guide
+##  Usage Guide
 ### For Citizens
 
 **1.** Navigate to:
@@ -111,7 +111,7 @@ docker exec -it healthqr_backend python seed_medic.py
 
 **5.** View real-time, critical medical data.
 
-## 🔒 Security & Compliance
+##  Security & Compliance
 
 HealthQR is designed with a **Privacy-First** architecture:
 
